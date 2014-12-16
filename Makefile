@@ -6,28 +6,31 @@ WORDLISTS = \
             grc.punc.txt \
             grc.number.txt
 DAWGS = $(WORDLISTS:.txt=-dawg)
+ifeq ($(shell uname),Darwin)
+	MEDIUM = Medium
+endif
 FONT_NAMES = \
-             "GFS Artemisia Medium" \
+             "$(strip GFS Artemisia ${MEDIUM})" \
              "GFS Artemisia Bold" \
              "GFS Artemisia Bold Italic" \
-             "GFS Artemisia Medium Italic" \
-             "GFS Bodoni Medium" \
+             "$(strip GFS Artemisia ${MEDIUM} Italic)" \
+             "$(strip GFS Bodoni ${MEDIUM})" \
              "GFS Bodoni Bold" \
              "GFS Bodoni Bold Italic" \
-             "GFS Bodoni Medium Italic" \
-             "GFS Didot Medium" \
+             "$(strip GFS Bodoni ${MEDIUM} Italic)" \
+             "$(strip GFS Didot ${MEDIUM})" \
              "GFS Didot Bold" \
              "GFS Didot Bold Italic" \
-             "GFS Didot Medium Italic" \
-             "GFS DidotClassic Medium" \
-             "GFS Neohellenic Medium" \
+             "$(strip GFS Didot ${MEDIUM} Italic)" \
+             "$(strip GFS DidotClassic ${MEDIUM})" \
+             "$(strip GFS Neohellenic ${MEDIUM})" \
              "GFS Neohellenic Bold" \
              "GFS Neohellenic Bold Italic" \
-             "GFS Neohellenic Medium Italic" \
-             "GFS Philostratos Medium" \
-             "GFS Porson Medium" \
-             "GFS Pyrsos Medium" \
-             "GFS Solomos Medium"
+             "$(strip GFS Neohellenic ${MEDIUM} Italic)" \
+             "$(strip GFS Philostratos ${MEDIUM})" \
+             "$(strip GFS Porson ${MEDIUM})" \
+             "$(strip GFS Pyrsos ${MEDIUM})" \
+             "$(strip GFS Solomos ${MEDIUM})"
 FONT_URLNAMES = \
                 GFS_ARTEMISIA_OT \
                 GFS_BODONI_OT \
