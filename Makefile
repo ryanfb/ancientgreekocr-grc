@@ -92,7 +92,7 @@ grc.normproto: features
 	mftraining -F font_properties -U grc.earlyunicharset -O grc.unicharset grc*tr
 	for i in inttemp pffmtable shapetable; do mv $$i $*.$$i; done
 
-.txt-dawg: mftraining # for the newest .unicharset
+.txt-dawg: grc.unicharset
 	wordlist2dawg $< $@ grc.unicharset
 
 install: grc.traineddata
