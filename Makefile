@@ -47,7 +47,7 @@ CHARSPACING = 1.0
 
 all: grc.traineddata
 
-grc.traineddata: features mftraining grc.normproto grc.unicharambigs $(DAWGS)
+grc.traineddata: grc.config features grc.unicharset grc.pffmtable grc.inttemp grc.shapetable grc.normproto grc.unicharambigs $(DAWGS)
 	combine_tessdata grc.
 
 fonts:
@@ -88,10 +88,9 @@ grc.normproto: features
 	mv normproto $@
 
 # mftraining
-mftraining: grc.earlyunicharset features font_properties
+%.unicharset %.inttemp %.pffmtable %.shapetable: grc.earlyunicharset features font_properties
 	mftraining -F font_properties -U grc.earlyunicharset -O grc.unicharset grc*tr
-	for i in inttemp pffmtable shapetable; do mv $$i grc.$$i; done
-	touch mftraining
+	for i in inttemp pffmtable shapetable; do mv $$i $*.$$i; done
 
 .txt-dawg: mftraining # for the newest .unicharset
 	wordlist2dawg $< $@ grc.unicharset
