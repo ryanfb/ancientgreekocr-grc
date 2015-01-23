@@ -1,5 +1,5 @@
-FONTSITE = http://greekfontsociety.gr
-# FONTSITE = http://ancientgreekocr.org/archived # backup copies
+# FONTSITE = http://greekfontsociety.gr
+FONTSITE = http://ancientgreekocr.org/archived # backup copies
 WORDLISTS = \
             grc.word.txt \
             grc.freq.txt \
