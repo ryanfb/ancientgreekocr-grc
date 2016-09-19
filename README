@@ -3,7 +3,7 @@ training.
 
 The following files have been automatically generated using the
 tools in the grctraining git repository located at
-  http://ancientgreekocr.org/grctraining.git
+  https://github.com/ryanfb/ancientgreekocr-grctraining
 
 - training_text.txt
 - grc.word.txt
